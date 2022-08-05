@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "react-app",
+    "plugin:react/recommended"
+  ],
+  "rules": {
+    "semi": [
+      "error",
+      "never",
+      {
+        "beforeStatementContinuationChars": "always"
+      }
+    ],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-unused-vars": ["error"]
+  }
+}
