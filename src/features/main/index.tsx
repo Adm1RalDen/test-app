@@ -1,6 +1,11 @@
 import { useAppDispatch, useAppSelector } from 'app/hooks'
+import ROUTES from 'app/routes'
+import NavigationButton from 'components/button/navigation-button'
+import CommonLayout from 'components/layout'
 import Spinner from 'components/spinner'
-import { useEffect } from 'react'
+import { H1 } from 'components/typography'
+import { useCallback, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import FilterList from './components/filter-list'
 import { definitionsSelector, filtersSelector } from './selectors'
 
@@ -9,6 +14,7 @@ import { MainContainer } from './styles'
 
 function Main() {
   const dispatch = useAppDispatch()
+  const navigate = useNavigate()
   const filters = useAppSelector(filtersSelector.data) || []
   const isFetchingFilters = useAppSelector(filtersSelector.isFetching)
   const isFetchingDefinitions = useAppSelector(definitionsSelector.isFetching)
@@ -19,15 +25,24 @@ function Main() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const handleClickToCreateFilter = useCallback(() => {
+    navigate(ROUTES.newFilter)
+  }, [navigate])
+
   return (
-    <MainContainer>
-      <h1>Available Filters</h1>
-      {isFetchingFilters || isFetchingDefinitions ? (
-        <Spinner />
-      ) : (
-        <FilterList filters={filters} />
-      )}
-    </MainContainer>
+    <CommonLayout>
+      <MainContainer>
+        <H1>Available Filters</H1>
+        {isFetchingFilters || isFetchingDefinitions ? (
+          <Spinner />
+        ) : (
+          <FilterList filters={filters} />
+        )}
+        <NavigationButton onClick={handleClickToCreateFilter}>
+          Create Filter
+        </NavigationButton>
+      </MainContainer>
+    </CommonLayout>
   )
 }
 

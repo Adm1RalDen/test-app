@@ -29,6 +29,6 @@ export interface Definition {
   id: string
   label: string
   type: DefinationType
-  operators: string[]
+  operators: OperatorEnum[]
   default_value: any
 }

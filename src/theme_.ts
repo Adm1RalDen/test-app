@@ -13,12 +13,22 @@ const devices = {
 
 const theme = {
   colors: {
+    yellow: '#ffd803',
+    darkBlue: '#272343',
+    paragraph: '#2d334a',
+    background: '#fffffe',
+    buttonText: '#272343',
+    secondary: '#e3f6f5',
+    lightBlue: '#bae8e8',
     white: '#FFFFFF',
     black: '#000000',
     lightRed: '#DB542A1A',
     green: '#0AD042',
     grey: '#F8F8F8',
     otterWarmBlack: '#382E2B',
+    darkeyGrey: '#A5A5A5',
+    lightGrey: '#F2F2F2',
+    pelicanGrey: '#DBD9D6',
   },
 
   spacing: {
