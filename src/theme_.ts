@@ -29,6 +29,8 @@ const theme = {
     darkeyGrey: '#A5A5A5',
     lightGrey: '#F2F2F2',
     pelicanGrey: '#DBD9D6',
+    error: '#C5292A',
+    horizonOrange: '#FF5F00',
   },
 
   spacing: {

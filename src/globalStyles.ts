@@ -75,6 +75,7 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 100%;
     line-height: 1.15;
     margin: 0;
+    box-sizing: border-box;
   }
   button,input {
     overflow: visible;

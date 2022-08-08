@@ -41,6 +41,7 @@ function Select({
         </StyledSelectLabelWrapper>
       )}
       <StyledSelect
+        value={value}
         inputId={name}
         placeholder={placeholder}
         classNamePrefix="select"
